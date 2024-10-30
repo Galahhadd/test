@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "27e1852c-4cd2-4610-b8cb-eef3c7d968d1",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "10577998"
+	},
+	"item": [
+		{
+			"name": "Cat Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Tomas\",\r\n    \"years_of_experience\": 3,\r\n    \"breed\": \"Abyssinian\",\r\n    \"salary\": 325432.23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/cat/create/"
+			},
+			"response": []
+		},
+		{
+			"name": "Show All Cats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/v1/cats/"
+			},
+			"response": []
+		},
+		{
+			"name": "Specific cat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/v1/cat/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Change cats salary",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Tomas\",\r\n    \"years_of_experience\": 3,\r\n    \"breed\": \"Abyssinian\",\r\n    \"salary\": \"328\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/cat/1"
+			},
+			"response": []
+		},
+		{
+			"name": "New Mission",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cat_id\": null,  \r\n    \"complete\": false,\r\n    \"targets\": [\r\n        {\r\n            \"name\": \"Target 1\",\r\n            \"country\": \"Country A\",\r\n            \"notes\": \"Notes for Target 1\",\r\n            \"complete\": false\r\n        },\r\n        {\r\n            \"name\": \"Target 2\",\r\n            \"country\": \"Country B\",\r\n            \"notes\": \"Notes for Target 2\",\r\n            \"complete\": false\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/mission/create/"
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Cat",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"cat_id\": 1,\r\n    \"complete\": false,\r\n    \"targets\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"Target 1\",\r\n            \"country\": \"Country A\",\r\n            \"notes\": \"Notes for Target 1\",\r\n            \"complete\": false\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"Target 2\",\r\n            \"country\": \"Country B\",\r\n            \"notes\": \"Notes for Target 2\",\r\n            \"complete\": false\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/mission/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Show All Missions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/v1/missions"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete mission",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/v1/mission/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete (when having no cat)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/v1/mission/1"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"Target 1\",\r\n    \"country\": \"Country A\",\r\n    \"notes\": \"Notes for Target 1\",\r\n    \"complete\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/target/3"
+			},
+			"response": []
+		}
+	]
+}

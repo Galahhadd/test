@@ -34,6 +34,13 @@ class TargetSeializer(serializers.ModelSerializer):
         if Target.objects.filter(value).exists():
             raise serializers.ValidationError("Target can only have one mission")
         return value
+    
+    def update(self, instance, validated_data):
+        instance.notes = validated_data.get('notes', instance.notes)
+        instance.complete = validated_data.get('complete', instance.complete)
+
+        instance.save()
+        return instance
 
 class MissionSerializer(serializers.ModelSerializer):
     targets = TargetSeializer(many = True)

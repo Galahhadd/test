@@ -7,7 +7,7 @@ How to launch:
 
 2. Start docker on your local machine and use "docker-compose up -d" Then type "docker-compose exec web python manage.py migrate" (all within folder where project is located)
 
-3. Start doing API calls
+3. Start making API calls
    Available endpoints:
    1) http://127.0.0.1:8000/api/v1/cat/create/ - allows to create cats
    2) http://127.0.0.1:8000/api/v1/cats/ - retrieve all cats
